@@ -89,7 +89,7 @@ function readLine(): string {
 }
 
 export function hurdleRace(k: number, height: number[]): number {
-    const max: number = height.sort()[height.length - 1];
+    const max: number = Math.max(...height);
     return Math.max(0, max - k);
 }
 

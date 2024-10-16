@@ -3,14 +3,14 @@ import { hurdleRace } from './the-hurdle-race';
 
 describe("Test", function () {
 
-    it("All hurdles are lower than the Jump", function () {
-        const result = hurdleRace(4, [1, 1, 2, 1, 3]);
+    it("Test Case 0", function () {
+        const result = hurdleRace(4, [1, 6, 3, 5, 2]);
 
-        expect(result).toBe(0);
+        expect(result).toBe(2);
     });
 
     it("Hundle is greater than the jump height", function () {
-        const result = hurdleRace(5, [1, 5, 2, 7, 2, 3]);
+        const result = hurdleRace(7, [2, 5, 4, 5, 2]);
         expect(result).toBe(2);
     });
 })
