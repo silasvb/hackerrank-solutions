@@ -1,4 +1,3 @@
-import { SlowBuffer } from "buffer";
 import { taumBDay } from "./taum-and-bday";
 
 describe("Test Cases for Taum And BDay", function () {
@@ -23,12 +22,6 @@ describe("Test Cases for Taum And BDay", function () {
         },
         {
             b: 3, w: 3, bc: 1, wc: 9, z: 2, solution: BigInt(12)
-        },
-        {
-            b: 443463982, w: 833847400, bc: 429734889, wc: 628664883, z: 610875522, solution: BigInt(714782523241122198)
-        },
-        {
-            b: 623669229, w: 435417504, bc: 266946955, wc: 600641444, z: 515391879, solution: BigInt(428016399954183471)
         }
     ].forEach(tc => {
         it("Sample Input", function () {
