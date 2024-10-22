@@ -38,18 +38,21 @@ export function climbingLeaderboard(ranked: number[], player: number[]): number[
 
     const sortedPlayers = [...new Set(player)].sort((x, y) => y - x);
 
+    let sortedPlayerIdx = 0;
+
     let prevPlayer = sortedPlayers[0];
     for (let i = 0; i < unique.length; i++) {
         const score = unique[i];
 
-        for (let k = prevPlayer; k >= score; k--) {
-            if (playerMap.has(k)) {
-                const players = playerMap.get(k);
-                for (let j = 0; j < players.length; j++) {
-                    positions[players[j]] = i + 1;
-                }
+        while (sortedPlayers[sortedPlayerIdx] >= score && sortedPlayerIdx < sortedPlayers.length) {
+            let playerScore = sortedPlayers[sortedPlayerIdx];
+            const players = playerMap.get(playerScore);
+            for (let j = 0; j < players.length; j++) {
+                positions[players[j]] = i + 1;
             }
+            sortedPlayerIdx++;
         }
+
 
         prevPlayer = score - 1;
     }
